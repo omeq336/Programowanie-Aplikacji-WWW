@@ -1,0 +1,184 @@
+*{
+    /*font-family: "Lucida Console", "Courier New", monospace*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin: 0; 
+    margin-left: 50px;
+    margin-right: 50px;
+    height: 100vh; 
+    background-image: url('../img/stars.gif'); 
+    background-repeat: repeat; 
+    background-size: auto; 
+    background-position: top left; 
+    color: white
+}
+
+menu{
+        background-color: #0E1152;
+        margin:0;
+        overflow: hidden 
+}
+
+h1{
+	text-align: center;
+    font-family: Garamond, serif;
+    font-size: 50px;
+    letter-spacing: 10px;
+    color:#E39B27
+}
+
+h2{
+    font-family: Garamond, serif;
+    letter-spacing: 5px;
+    color:#E39B27
+}
+
+table, tr, td {
+    margin: auto;
+    transform: translateX(-20px);
+    border:1px solid black;
+}
+
+td{
+    background-color: #8D7936;
+	text-align: center;
+}
+
+.kontener1{
+    margin-left: -80px;
+    height:150px;
+}
+
+.kontener1 h2{
+    font-size: 20px;
+    text-align: center;
+    font-style:italic;
+}
+
+#zegarek, #data{
+    float:right;
+    margin-right: 10px;
+    font-family: Garamond, serif;
+    letter-spacing: 2px;
+    color:#E39B27
+}
+
+
+.nawigacja{
+    margin-left: -100px;
+    height: 100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    background-color: #0B0D36
+        
+    
+}
+
+.nawigacja a{
+    color: #D1CC8C;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.nawigacja a:hover{
+    color: #524C0E;
+    text-shadow: 4px 4px black;
+}
+
+.nawigacja ul li{
+    display: inline-block;
+    margin-right: 70px;
+}
+
+
+/*Oblewające zdjęcie*/
+.oscarContainer{
+    max-width: 900px; 
+    margin: auto; 
+    margin-bottom: 150px;
+}
+
+.oscarImage{
+    width: 360px;
+    height: 360px;
+    padding-right: 10px;
+    float:left;
+    shape-outside: circle(50%);
+}
+
+.rozlanyContainer{
+    max-width: 900px;
+    margin: auto; 
+    margin-bottom: 300px;
+}
+
+.rozlaneLewo{
+    width: 360px;
+    height: 360px;
+    padding-right: 10px;
+    float:left;
+    shape-outside: border-box(50%);
+
+
+}
+.rozlanePrawo{
+    width: 360px;
+    height: 360px;
+    padding-right: 10px;
+    float:right;
+    shape-outside:border-box(50%);
+}
+
+/* CSS dla oddzielnych podstron, pozniej zostana zamienione na osobne pliki */
+#color_button
+{
+    width: 200px; 
+    background-color: #0E1152; 
+    color: orange; 
+    font-weight: bold;
+    border: 2px solid orange; 
+    padding: 10px 20px;
+    margin-right: 15px; 
+    cursor: pointer; 
+    margin-right: 0;
+    display: block; 
+    margin-bottom: 15px; 
+}
+
+#color_button:hover{
+    background-color: black;
+}
+
+.color_button_container {
+    text-align: right;
+}
+
+/* jQuery */
+.test-block{
+
+
+
+
+/*
+    width:200px;
+
+    padding:20px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
+    border:2px solid rgba(71,236,30,1);
+    background: rgba(71,236,30,0.7);
+    color:#000;
+    cursor: pointer;
+
+*/
+
+
+}
