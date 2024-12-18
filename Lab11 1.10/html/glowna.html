@@ -1,0 +1,190 @@
+<ol>
+	<table>
+        <div class="kontener1">
+        
+        <div id="glowyHeader">
+        <h1 id="glowyHeader"> Filmy z nagrodami oskara</h1>
+        <h2><i>Przeżyj drugie życie.</i></h2>
+
+        </div>
+        <script>
+            $(document).ready(function() {
+                // Funkcja odpowiedzialna za animację obracania i skalowania nagłówka
+                function swayAndScale() {
+                    // Pierwsza część animacji - obrót o -5 stopni i skalowanie do 1.0
+                    $("#glowyHeader").animate(
+                        { deg: -5, scale: 1.0 }, // Obrót o -5 stopni i skalowanie do 1.0
+                        {
+                            duration: 3000, // Czas trwania animacji w milisekundach
+                            step: function(now, fx) {
+                                // Ustawienie właściwości obrotu i skalowania na podstawie zmiennych
+                                if (fx.prop === "deg") {
+                                    // Jeśli zmienia się kąt obrotu (deg)
+                                    $(this).css({
+                                        transform: 'rotate(' + now + 'deg) scale(' + $(this).data("scale") + ')'
+                                    });
+                                    $(this).data("deg", now); // Zapisanie bieżącego kąta obrotu
+                                } else if (fx.prop === "scale") {
+                                    // Jeśli zmienia się skalowanie (scale)
+                                    $(this).css({
+                                        transform: 'rotate(' + $(this).data("deg") + 'deg) scale(' + now + ')'
+                                    });
+                                    $(this).data("scale", now); // Zapisanie bieżącego poziomu skali
+                                }
+                            }
+                        }
+                    ).animate(
+                        { deg: 5, scale: 0.9 }, // Druga część animacji - obrót o 5 stopni i skalowanie do 0.9
+                        {
+                            duration: 3000, // Czas trwania animacji w milisekundach
+                            step: function(now, fx) {
+                                // Ustawienie właściwości obrotu i skalowania w drugiej fazie animacji
+                                if (fx.prop === "deg") {
+                                    $(this).css({
+                                        transform: 'rotate(' + now + 'deg) scale(' + $(this).data("scale") + ')'
+                                    });
+                                    $(this).data("deg", now); // Zapisanie nowego kąta obrotu
+                                } else if (fx.prop === "scale") {
+                                    $(this).css({
+                                        transform: 'rotate(' + $(this).data("deg") + 'deg) scale(' + now + ')'
+                                    });
+                                    $(this).data("scale", now); // Zapisanie nowego poziomu skali
+                                }
+                            },
+                            complete: swayAndScale // Wywołanie funkcji swayAndScale w celu rozpoczęcia nowej animacji
+                        }
+                    );
+                }
+
+                // Inicjalizacja wartości początkowych dla obrotu i skali
+                $("#glowyHeader").data("deg", 0).data("scale", 1.0);
+
+                // Rozpoczęcie animacji
+                swayAndScale();
+            });
+        </script>
+
+        
+        <div id="zegarek"><script>showtime()</script></div>
+        <div id="data"><script>gettheDate()</script></div>
+        </div>
+        <menu class="nawigacja">
+        <ul>
+            <li><a href="#oscar">Oscar</a></li>
+            <li><a href="index.php?idp=podstrona6">Filmy</a></li>
+            <li><a href="#opinie">Opinie</a></li>     
+            <li><a href="#kontakt">Kontakt</a></li>
+            <!--<li><a href="#about">O mnie</a></li>-->
+        </ul>
+        </menu>
+        
+            <h2 id="filmy"></h2>
+            <tr><td>
+            <a href="index.php?idp=podstrona1">
+            <img src="img/1.jpg" alt="Zdjecie 1" style="float:left; margin:10px" width="305" height="500">
+            </a></td>
+            <td><a href="index.php?idp=podstrona2">
+            <img src="img/2.jpg" alt="Zdjecie 2" style="float:left; margin:10px" width="305" height="500">
+            </a></td>
+            <td><a href="index.php?idp=podstrona3">
+            <img src="img/3.jpg" alt="Zdjecie 3" style="float:left; margin:10px" width="305" height="500">
+            </a></td>
+            <td><a href="index.php?idp=podstrona4">
+            <img src="img/4.jpg" alt="Zdjecie 4" style="float:left; margin:10px" width="305" height="500">
+            </a></td>
+            <td><a href="index.php?idp=podstrona5">
+            <img src="img/5.jpg" alt="Zdjecie 5" style="float:left; margin:10px" width="305" height="500">
+            </a></td></tr>
+
+            <tr>
+            <td><span>Gwiezdne Wojny: Nowa nadzieja</span></td>
+            <td><span>Gwiezdne Wojny: Imperium kontratakuje</span></td>
+            <td><span>Gwiezdne Wojny: Powrót Jedi</span></td>
+            <td><span>Joker</span></td>
+            <td><span>Shrek</span></td>
+            </tr>
+	</table>
+    
+    </ol>
+
+    <div class="oscarContainer">
+    <h2 id="oscar"></h2>
+    <img src = "img/oscar.png" alt="zdjecie Oscara" class="oscarImage">
+    <h2><i>Ale czym jest <u>Oscar?</u></i></h2>
+    <p>Nagroda Oscara (oficjalnie znana jako Academy Award of Merit) to jedna z najbardziej prestiżowych nagród filmowych na świecie. Przyznawana corocznie przez Amerykańską Akademię Sztuki i Wiedzy Filmowej (Academy of Motion Picture Arts and Sciences - AMPAS), nagroda ta honoruje wybitne osiągnięcia w różnych kategoriach, takich jak najlepszy film, najlepszy reżyser, najlepszy aktor, najlepsza aktorka oraz wiele innych. Pierwsze nagrody Oscarowe wręczono w 1929 roku podczas uroczystej ceremonii w Hollywood. Od tamtej pory wydarzenie to zyskało ogromną popularność i stało się ważnym punktem w kalendarzu przemysłu filmowego. Z biegiem lat ceremonia oscarowa przekształciła się w spektakularne wydarzenie telewizyjne, przyciągające miliony widzów na całym świecie.</p>
+    </div>
+        
+    <script>
+        let wlaczony = false;
+        
+        
+        $(".oscarContainer, .rozlaneLewo, .rozlanePrawo").on("click", function(){
+            if(!wlaczony){
+        $(this).animate({
+            width: "900px",
+            fontSize: "2em",
+            borderWidth:"10px"
+        }, 1000);
+            }
+            else {
+            $(this).animate({
+            width: "900px",
+            fontSize: "1em",
+            borderWidth:"10px"
+            }, 1000);
+    
+            }
+        wlaczony = !wlaczony;
+        });  
+    </script>
+        
+    <h2 id="opinie"><i>Opinie</i></h2>
+    <div class="rozlanyContainer">
+    <img src = "img/ep4.jpg"  class="rozlaneLewo">
+    <p><b>Gwiezdne Wojny: Nowa Nadzieja (1977)</b><br>
+    Pierwsza część sagi „Gwiezdne Wojny” z 1977 roku, znana również jako „Nowa Nadzieja”, była prawdziwym przełomem w świecie kina. Po premierze zyskała ogromne uznanie zarówno krytyków, jak i widowni, a jej innowacyjne efekty specjalne oraz epicka opowieść o walce dobra ze złem przyciągnęły miliony fanów. Film stał się kultowy i zapoczątkował fenomen, który trwa do dziś, tworząc silną bazę fanów i wprowadzając nowe standardy w branży filmowej.</p>
+    </div>
+        
+    <div class="rozlanyContainer">
+    <p align="right"><img src = "img/ep5.jpg" class="rozlanePrawo"><b>Gwiezdne Wojny: Imperium Kontratakuje (1980)</b><br>
+    Druga część trylogii, „Imperium Kontratakuje”, została wydana w 1980 roku i była szeroko uważana za jeden z najlepszych sequelów w historii kina. Film zyskał uznanie za mroczniejszy ton, głębszy rozwój postaci oraz zaskakujące zwroty akcji. Krytycy chwalili go za dojrzałość i złożoność narracji, a widownia z entuzjazmem przyjęła rozwój historii. „Imperium Kontratakuje” stał się klasykiem i nadal jest jednym z najbardziej cenionych filmów w całej sadze.</p>
+    </div>
+        
+    <div class="rozlanyContainer">
+    <p><img src = "img/ep6.jpg"  class="rozlaneLewo"><b>Gwiezdne Wojny: Powrót Jedi (1983)</b><br>
+    „Powrót Jedi” z 1983 roku zamknął oryginalną trylogię i również zdobył dużą popularność wśród widowni. Mimo że film był dobrze przyjęty, nie wszyscy krytycy byli tak entuzjastyczni jak w przypadku poprzednich części. Chociaż cieszył się dużym zainteresowaniem, niektórzy widzowie wskazywali na pewne niedociągnięcia fabularne i uproszczenie niektórych wątków. Mimo to film zakończył sagę z przytupem, pozostawiając wiele pozytywnych wspomnień.</p>
+    </div>    
+        
+    <div class="rozlanyContainer">
+    <p align="right"><img src = "img/joker.jpg" class="rozlanePrawo"><b>Joker (2019)</b><br>
+    Film „Joker” w reżyserii Todda Phillipsa z 2019 roku wywołał wiele kontrowersji, ale także ogromne uznanie. Widzowie docenili intensywną grę aktorską Joaquina Phoenixa, który wcielił się w tytułową rolę. Krytycy chwalili film za jego psychologiczne podejście do postaci Jokera oraz za odważną narrację. „Joker” zdobył wiele nagród, w tym Oscara za najlepszą rolę pierwszoplanową, i stał się jednym z najważniejszych filmów swojego roku, wzbudzając intensywne dyskusje na temat zdrowia psychicznego i społeczeństwa.</p>
+    </div>
+
+    <div class="rozlanyContainer">
+    <img src = "img/sh.jpg"  class="rozlaneLewo">
+    <p><b>Shrek (2001)</b><br>
+    Film „Shrek”, wydany w 2001 roku, został ciepło przyjęty przez widownię i krytyków, a jego sukces zaskoczył wielu. Jako animacja, „Shrek” przełamał konwencje tradycyjnych bajek, łącząc humor dla dorosłych z elementami familijnymi. Główny bohater, ogr imieniem Shrek, zyskał sympatię widzów dzięki swojej nieprzeciętnej osobowości i niechęci do stereotypów.</p>
+    </div>
+        
+    <h2 id="kontakt"><i>Kontakt</i><br><span>169349@student.uwm.edu.pl</span></h2>
+        
+    <form action="mailto:169349@student.uwm.edu.pl" method="POST" enctype="text/plain">
+    <label for="name">Imię:</label><br>
+    <input type="text" id="name" name="Imię" required><br><br>
+
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="Email" required><br><br>
+
+    <label for="message">Wiadomość:</label><br>
+    <textarea id="message" name="Wiadomość" rows="4" cols="50" required></textarea><br><br>
+
+    <input type="submit" value="Wyślij wiadomość">
+    </form>
+    <!--<h2 id="about">O mnie</h2>-->
+        
+    <?php
+    $nr_indeksu='169349';
+    $nrGrupy = '3';
+
+    echo 'Autor: Jakub Pawlak '.$nr_indeksu.' grupa '.$nrGrupy.'<br/><br/>';
+    ?>
