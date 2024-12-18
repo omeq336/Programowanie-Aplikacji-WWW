@@ -18,3 +18,12 @@ CREATE TABLE produkty (
 -- Dodanie klucza obcego nawiazujacego do tabeli kategorie
 ALTER TABLE produkty
 ADD CONSTRAINT fk_kategoria FOREIGN KEY (kategoria) REFERENCES kategorie(id);
+
+-- Przykladowy insert
+INSERT INTO produkty (tytul, opis, data_wygasniecia, cena_netto, podatek_vat, ilosc_magazyn, status_dostepnosci, kategoria, gabaryt)
+VALUES 
+('Film Akcji', 'Ekscytujący film akcji z dynamicznymi scenami.', '2025-12-31', 19.99, 23.00, 50, 'dostępny', 18, 'mały'),
+('Komedia Rodzinna', 'Komedia dla całej rodziny z humorem.', '2024-06-30', 14.99, 23.00, 0, 'niedostępny', 19, 'mały'),
+('Thriller Nocny', 'Mroczny thriller pełen zwrotów akcji.', '2026-01-01', 24.99, 23.00, 15, 'dostępny', 23, 'średni'),
+('Horror Przerażający', 'Film grozy dla fanów mocnych wrażeń.', '2025-10-15', 17.99, 23.00, 0, 'niedostępny', 22, 'duży'),
+('Film Fantasy', 'Epicka opowieść o świecie magii i smoków.', '2026-03-01', 29.99, 23.00, 20, 'dostępny', 24, 'duży');
