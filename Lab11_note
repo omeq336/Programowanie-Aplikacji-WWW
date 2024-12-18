@@ -1,0 +1,20 @@
+-- Kod sql tworzacy tabele produkty
+CREATE TABLE produkty (
+    id INT AUTO_INCREMENT PRIMARY KEY,               -- Identyfikator produktu
+    tytul VARCHAR(255) NOT NULL,                    -- Tytuł produktu
+    opis TEXT,                                      -- Opis produktu
+    data_utworzenia DATETIME DEFAULT CURRENT_TIMESTAMP, -- Data utworzenia rekordu
+    data_modyfikacji DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, -- Data ostatniej modyfikacji
+    data_wygasniecia DATETIME,                      -- Data wygaśnięcia produktu
+    cena_netto DECIMAL(10, 2) NOT NULL,             -- Cena netto produktu
+    podatek_vat DECIMAL(5, 2) NOT NULL,            -- Podatek VAT w procentach
+    ilosc_magazyn INT DEFAULT 0,                   -- Ilość dostępnych sztuk
+    status_dostepnosci ENUM('dostępny', 'niedostępny') DEFAULT 'dostępny', -- Status dostępności
+    kategoria INT NOT NULL,                        -- Id kategorii produktu (klucz obcy)
+    gabaryt ENUM('mały', 'średni', 'duży') DEFAULT 'mały', -- Gabaryt produktu
+    zdjecie BLOB                                   -- Zdjęcie produktu w formacie BLOB,
+);
+
+-- Dodanie klucza obcego nawiazujacego do tabeli kategorie
+ALTER TABLE produkty
+ADD CONSTRAINT fk_kategoria FOREIGN KEY (kategoria) REFERENCES kategorie(id);
